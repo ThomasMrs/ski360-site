@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ski360 – Politique de confidentialité</title>
+<style>
+:root {
+    --primary: #3d445e;
+    --accent: #d1a964;
+    --text: #1E1E1E;
+    --muted: #adb2c3;
+    --background: #ffffff;
+    --surface: #f4f5f8;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #f2f3f6;
+        --background: #1E1E1E;
+        --surface: #2a2d38;
+    }
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+}
+header {
+    background: var(--primary);
+    color: #ffffff;
+    padding: 32px 16px;
+}
+header h1 { margin: 0 auto; max-width: 760px; font-size: 1.8rem; }
+header p { margin: 8px auto 0; max-width: 760px; color: var(--muted); }
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
+h2 { color: var(--primary); border-left: 4px solid var(--accent); padding-left: 10px; margin-top: 32px; }
+@media (prefers-color-scheme: dark) { h2 { color: var(--accent); } }
+.card { background: var(--surface); border-radius: 14px; padding: 16px; margin: 12px 0; }
+table { width: 100%; border-collapse: collapse; }
+td, th { text-align: left; padding: 8px; border-bottom: 1px solid var(--muted); vertical-align: top; }
+footer { color: var(--muted); font-size: 0.9rem; margin-top: 40px; }
+a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+<h1>Politique de confidentialité de Ski360</h1>
+<p>Dernière mise à jour : 8 novembre 2026</p>
+</header>
+<main>
+<p>Ski360 est une application iPhone qui enregistre vos journées de ski et vous permet de partager votre position en direct avec un groupe d'amis (« squad »). Cette page explique quelles données sont utilisées, pourquoi, et comment les supprimer.</p>
+
+<h2>En résumé</h2>
+<div class="card">
+<ul>
+<li>Pas de compte à créer : un identifiant anonyme est attribué à votre téléphone.</li>
+<li>Votre journal (traces GPS, sessions, matériel) reste sur votre téléphone.</li>
+<li>Votre position n'est partagée qu'avec les membres de vos squads, et n'est pas enregistrée sur nos serveurs.</li>
+<li>Aucune publicité, aucun traçage, aucune revente de données.</li>
+<li>Vous pouvez tout supprimer depuis l'application.</li>
+</ul>
+</div>
+
+<h2>Données traitées</h2>
+<table>
+<tr><th>Donnée</th><th>Utilisation</th><th>Où elle est conservée</th></tr>
+<tr><td>Position précise, vitesse, altitude</td><td>Mesurer vos descentes ; afficher votre position à votre squad</td><td>Sur votre téléphone. Transmise en direct aux membres du squad, sans stockage sur le serveur.</td></tr>
+<tr><td>Identifiant anonyme</td><td>Vérifier que seuls les membres d'un squad accèdent à ses données</td><td>Serveur Supabase (Union européenne, Paris)</td></tr>
+<tr><td>Prénom et couleur choisis</td><td>Vous reconnaître sur la carte et dans le classement</td><td>Sur votre téléphone ; prénom et couleur conservés sur le serveur pour le classement de la saison du squad</td></tr>
+<tr><td>Totaux par journée (dénivelé, distance, vitesse max, pente max, nombre de descentes)</td><td>Classement de la saison entre membres du squad</td><td>Serveur Supabase, visibles uniquement par les membres du squad</td></tr>
+<tr><td>Nom du squad, code d'invitation</td><td>Rejoindre et gérer un squad</td><td>Serveur Supabase</td></tr>
+<tr><td>Messages et alertes du squad (SOS, chute, ralliement)</td><td>Communication entre membres</td><td>Transmis en direct, non conservés sur le serveur ; historique de 2 jours sur votre téléphone. Lorsque l'app d'un membre est fermée, une notification Apple lui transmet le texte de l'alerte et, pour un SOS, une chute ou un ralliement, la position concernée.</td></tr>
+<tr><td>Identifiant de notification de votre téléphone (jeton Apple), langue de l'app</td><td>Vous envoyer les alertes de votre squad quand Ski360 est fermé</td><td>Serveur Supabase, jusqu'à la désactivation du réglage « Alertes du squad app fermée » ou la suppression du compte. Le journal des envois est effacé après 24 heures.</td></tr>
+<tr><td>Massif de la station (numéro Météo-France)</td><td>Afficher le bulletin d'estimation du risque d'avalanche</td><td>Aucune donnée personnelle transmise ; les bulletins sont gardés en cache sur le serveur et sur votre téléphone</td></tr>
+<tr><td>Stats de session, liste du squad</td><td>Affichage sur votre Apple Watch</td><td>Échangées directement entre votre iPhone et votre montre, sans passer par nos serveurs</td></tr>
+<tr><td>Coordonnées de la station (arrondies)</td><td>Météo de la station via Open-Meteo</td><td>Non conservées par Ski360</td></tr>
+</table>
+
+<h2>Localisation en arrière-plan</h2>
+<p>Pendant une session de ski, Ski360 continue d'enregistrer votre trace écran verrouillé. En dehors d'une session, si vous avez rejoint un squad, votre position reste visible par ses membres uniquement lorsque vous êtes en station de ski ; ce partage se désactive dans Squad → Profil &amp; réglages → Partage avec le squad.</p>
+
+<h2>Services tiers</h2>
+<ul>
+<li><strong>Supabase</strong> (hébergement de la base de données et du temps réel, région Paris) : sous-traitant technique.</li>
+<li><strong>Open-Meteo</strong> : prévisions météo à partir des coordonnées arrondies de la station.</li>
+<li><strong>Météo-France</strong> : bulletins d'estimation du risque d'avalanche, récupérés par notre serveur sans donnée personnelle.</li>
+<li><strong>OpenStreetMap / OpenSnowMap</strong> : plans des pistes, téléchargés sans données personnelles.</li>
+<li><strong>Apple</strong> : cartes, notifications et, si vous l'activez, l'app Santé (vos données Santé restent sous votre contrôle dans l'app Santé).</li>
+</ul>
+
+<h2>Durée de conservation</h2>
+<p>Les données du serveur sont conservées tant que vous êtes membre d'un squad. Elles sont effacées lorsque vous quittez le squad ou supprimez votre compte. Les tentatives d'adhésion sont effacées après 24 heures.</p>
+
+<h2>Vos droits</h2>
+<p>Dans l'application : Squad → Profil &amp; réglages → Mes données → « Supprimer mon compte Ski360 » efface immédiatement votre compte, vos adhésions, vos totaux de saison et l'identifiant de notification de votre téléphone. Vos sessions locales se suppriment depuis l'onglet Journal. Vous pouvez aussi nous écrire pour exercer vos droits d'accès, de rectification ou d'effacement (RGPD).</p>
+
+<h2>Contact</h2>
+<p>Pour toute question ou demande liée à vos données : <a href="https://github.com/ThomasMrs/ski360-site/issues/new">ouvrez une demande</a> (voir aussi la page <a href="aide.html">Aide et contact</a>).</p>
+
+<footer>Ski360 – application gratuite, sans publicité.</footer>
+</main>
+</body>
+</html>

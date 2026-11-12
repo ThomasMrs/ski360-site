@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ski360 – Aide</title>
+<style>
+:root {
+    --primary: #3d445e;
+    --accent: #d1a964;
+    --text: #1E1E1E;
+    --muted: #adb2c3;
+    --background: #ffffff;
+    --surface: #f4f5f8;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #f2f3f6;
+        --background: #1E1E1E;
+        --surface: #2a2d38;
+    }
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+}
+header { background: var(--primary); color: #ffffff; padding: 32px 16px; }
+header h1 { margin: 0 auto; max-width: 760px; font-size: 1.8rem; }
+header p { margin: 8px auto 0; max-width: 760px; color: var(--muted); }
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
+details { background: var(--surface); border-radius: 14px; padding: 14px 16px; margin: 10px 0; }
+summary { font-weight: 700; cursor: pointer; color: var(--primary); }
+@media (prefers-color-scheme: dark) { summary { color: var(--accent); } }
+.sos { border-left: 4px solid #e5312b; padding: 12px 16px; background: var(--surface); border-radius: 10px; }
+a { color: var(--accent); }
+footer { color: var(--muted); font-size: 0.9rem; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header>
+<h1>Aide Ski360</h1>
+<p>Questions fréquentes et contact</p>
+</header>
+<main>
+<p class="sos"><strong>Urgence en montagne :</strong> appelez le <strong>112</strong>. Dans Ski360, le bouton SOS de la carte ouvre le mode secours : appel du 112, coordonnées GPS à lire aux secours et envoi de votre position par SMS.</p>
+
+<details open>
+<summary>Comment créer ou rejoindre un squad ?</summary>
+<p>Onglet Squad → « Créer un squad », puis partagez le code <code>SKI-XXXXXX</code>, le QR code ou le lien. Vos amis choisissent « Rejoindre avec un code ». Un squad compte jusqu'à 30 membres.</p>
+</details>
+
+<details>
+<summary>Est-ce que ça marche écran éteint, téléphone dans la poche ?</summary>
+<p>Oui. Pendant une session, l'enregistrement, la Live Activity et le partage avec le squad continuent écran verrouillé. Choisissez « Toujours » dans Réglages → Ski360 → Position : si iOS ferme l'app, elle se relance seule et reprend la session.</p>
+</details>
+
+<details>
+<summary>Comment économiser la batterie ?</summary>
+<p>Ski360 réduit automatiquement la fréquence GPS quand vous êtes arrêté plus de 3 minutes. Par grand froid, gardez le téléphone dans une poche intérieure. Sous 15 % de batterie, votre squad est prévenu avec votre dernière position.</p>
+</details>
+
+<details>
+<summary>Et sans réseau en altitude ?</summary>
+<p>L'enregistrement fonctionne sans réseau. Le plan des pistes d'une station déjà ouverte reste disponible hors connexion ; vous pouvez le préparer à l'avance depuis le sélecteur de station.</p>
+</details>
+
+<details>
+<summary>Pourquoi un ami n'apparaît plus sur la carte ?</summary>
+<p>Il apparaît « Hors ligne » après 2 minutes sans nouvelle position : réseau absent, batterie vide ou partage en veille désactivé. Sa dernière position reste affichée.</p>
+</details>
+
+<details>
+<summary>Comment supprimer mes données ?</summary>
+<p>Squad → Profil &amp; réglages → Mes données → « Supprimer mon compte Ski360 ». Vos sessions se suppriment depuis l'onglet Journal. Détails dans la <a href="confidentialite.html">politique de confidentialité</a>.</p>
+</details>
+
+<h2>Contact</h2>
+<p>Pour signaler un problème, un contenu ou un comportement abusif, ou faire une suggestion : <a href="https://github.com/ThomasMrs/ski360-site/issues/new">ouvrez une demande ici</a> (compte GitHub gratuit requis), en précisant votre modèle d'iPhone et la version d'iOS. Ne publiez jamais votre code de squad ni votre position dans une demande.</p>
+<p lang="en">Need help? <a href="https://github.com/ThomasMrs/ski360-site/issues/new">Open a support request</a> and tell us your iPhone model and iOS version.</p>
+
+<footer>Ski360 – application gratuite, sans publicité.</footer>
+</main>
+</body>
+</html>
