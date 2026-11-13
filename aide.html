@@ -46,43 +46,73 @@ footer { color: var(--muted); font-size: 0.9rem; margin-top: 40px; }
 <p>Questions fréquentes et contact</p>
 </header>
 <main>
-<p class="sos"><strong>Urgence en montagne :</strong> appelez le <strong>112</strong>. Dans Ski360, le bouton SOS de la carte ouvre le mode secours : appel du 112, coordonnées GPS à lire aux secours et envoi de votre position par SMS.</p>
+<p class="sos"><strong>Urgence en montagne :</strong> appelez le <strong>112</strong>. Le mode secours affiche les coordonnées GPS et propose un partage par SMS. Un SOS ou une alerte de chute Ski360 prévient votre squad, pas les services de secours.</p>
 
 <details open>
 <summary>Comment créer ou rejoindre un squad ?</summary>
-<p>Onglet Squad → « Créer un squad », puis partagez le code <code>SKI-XXXXXX</code>, le QR code ou le lien. Vos amis choisissent « Rejoindre avec un code ». Un squad compte jusqu'à 30 membres.</p>
+<p>Onglet Squad → « Créer un squad », puis partagez le code d'invitation, le QR code ou le lien avec vos amis. Ils choisissent « Rejoindre avec un code ». Un squad compte jusqu'à 30 membres. Les fonctions réelles utilisent un compte anonyme créé automatiquement, sans inscription manuelle. Désactivez les deux options de démo pour rejoindre un vrai squad.</p>
+<p>Si vous êtes déjà dans un squad, rejoindre un autre groupe demande une confirmation : vous quittez le précédent et perdez l'accès à sa carte, son chat et vos statistiques de saison dans ce groupe.</p>
 </details>
 
 <details>
-<summary>Est-ce que ça marche écran éteint, téléphone dans la poche ?</summary>
-<p>Oui. Pendant une session, l'enregistrement, la Live Activity et le partage avec le squad continuent écran verrouillé. Choisissez « Toujours » dans Réglages → Ski360 → Position : si iOS ferme l'app, elle se relance seule et reprend la session.</p>
+<summary>Comment essayer Ski360 sans être en station ?</summary>
+<p>Dans Squad → Profil &amp; réglages → Mode démo, activez « GPS simulé (démo) » et, si souhaité, « 4 amis simulés en temps réel ». Vous pouvez ensuite démarrer une session depuis la carte.</p>
+<p>Chaque option active une démo locale : votre adhésion réelle est conservée et la connexion à votre squad réel est suspendue. Aucune position, alerte ou statistique de démo n'est transmise au serveur ; aucun entraînement simulé n'est enregistré dans Santé. Les sessions portent la mention « Démo » dans le journal et sont exclues des records, classements et compteurs réels de matériel. Terminez la session avant de modifier les options de démo. Si une session interrompue attend une décision, reprenez-la ou supprimez-la d'abord.</p>
 </details>
 
 <details>
-<summary>Comment économiser la batterie ?</summary>
-<p>Ski360 réduit automatiquement la fréquence GPS quand vous êtes arrêté plus de 3 minutes. Par grand froid, gardez le téléphone dans une poche intérieure. Sous 15 % de batterie, votre squad est prévenu avec votre dernière position.</p>
+<summary>Est-ce que l'enregistrement continue écran verrouillé ?</summary>
+<p>Pendant une session réelle, l'enregistrement et le partage avec votre squad continuent écran verrouillé, avec une Live Activity. L'accès à la position doit être autorisé. L'autorisation « Toujours » permet aussi à iOS de relancer le suivi après certaines interruptions ; une fermeture forcée de l'app ou des restrictions système peuvent empêcher cette reprise.</p>
+<p>Hors session, le réglage « Visible par mon squad écran verrouillé », dans Squad → Profil &amp; réglages → Partage avec le squad, est désactivé par défaut. Si vous l'activez, le partage reste limité à une station et au jour où vous avez skié. Vous pouvez le couper à tout moment.</p>
+</details>
+
+<details>
+<summary>Pourquoi une session ne démarre-t-elle pas ou n'est-elle pas enregistrée ?</summary>
+<p>Autorisez l'accès à la position dans Réglages iOS pour une session réelle. Un ancien enregistrement interrompu doit être repris ou supprimé avant d'en créer un autre. Le mode démo permet d'essayer l'app lorsque vous ne pouvez pas recevoir de GPS réel.</p>
+<p>Une session terminée avec moins de deux positions GPS exploitables ne peut pas être enregistrée ; l'app vous l'indique. À l'intérieur d'un bâtiment ou avec un signal très faible, sortez dans un endroit dégagé puis réessayez. Si le journal est indisponible, l'app bloque le démarrage afin de ne pas présenter un enregistrement comme sauvegardé.</p>
+</details>
+
+<details>
+<summary>La durée comprend-elle les pauses ? Et l'export Santé ?</summary>
+<p>Les nouvelles sessions enregistrent leur durée active, pauses exclues. Les sessions créées par une ancienne version peuvent conserver leur durée totale d'origine.</p>
+<p>Dans Squad → Profil &amp; réglages → Apple Santé, « Enregistrer mes sessions dans Santé » active l'export des sessions réelles. Autorisez les entraînements ; la distance, les calories estimées et le tracé ne sont ajoutés que si vous autorisez ces catégories. Les pauses sont transmises à Santé. Ski360 ne lit pas votre historique Santé et n'y écrit aucune session démo.</p>
+</details>
+
+<details>
+<summary>Comment économiser la batterie et choisir les alertes ?</summary>
+<p>Ski360 réduit la précision et la fréquence des mises à jour GPS après un arrêt prolongé. Par grand froid, gardez le téléphone dans une poche intérieure. Le partage hors session est facultatif et désactivé par défaut.</p>
+<p>Le réglage « Prévenir le squad si ma batterie est faible » est également désactivé par défaut. S'il est activé, une alerte peut partir à 15 % ou moins pendant une session réelle ou un partage hors session autorisé. Cette alerte indique le niveau de batterie et ne contient aucune coordonnée.</p>
+<p>« Alertes du squad app fermée » permet de recevoir les notifications du squad selon vos autorisations iOS, le réseau et la disponibilité du service. Leur réception n'est pas garantie : en cas d'urgence, appelez les secours.</p>
+</details>
+
+<details>
+<summary>Comment signaler un message ou bloquer un membre ?</summary>
+<p>Dans les Messages du squad, ouvrez le menu d'un message reçu avec le bouton à trois points ou un appui prolongé. « Signaler » permet de choisir un motif et d'envoyer le contenu à la modération. Attendez la confirmation d'envoi ; si une erreur apparaît, réessayez avec du réseau. Un signalement ne bloque pas automatiquement l'auteur.</p>
+<p>« Bloquer » masque les messages et alertes non vitales de ce membre sur votre téléphone. Pour débloquer quelqu'un, ouvrez Squad → Profil &amp; réglages → Mes données → « Membres bloqués », également accessible depuis le chat. Les SOS et alertes de chute restent visibles pour la sécurité.</p>
+<p>Le masquage dans l'app est immédiat. Le filtrage des notifications reçues app fermée nécessite la synchronisation des identifiants bloqués avec le serveur. Sans réseau, ou avant cette synchronisation, une notification peut encore arriver. Le filtre de langage grossier en français et en anglais limite certains contenus à l'envoi et à l'affichage ; il ne remplace pas les signalements.</p>
 </details>
 
 <details>
 <summary>Et sans réseau en altitude ?</summary>
-<p>L'enregistrement fonctionne sans réseau. Le plan des pistes d'une station déjà ouverte reste disponible hors connexion ; vous pouvez le préparer à l'avance depuis le sélecteur de station.</p>
+<p>L'enregistrement GPS fonctionne sans réseau. Préparez le plan des pistes et des remontées depuis le sélecteur de station avant la sortie. Les tuiles déjà consultées peuvent rester dans le cache local, mais les fonds cartographiques et données non téléchargées ne sont pas garantis hors connexion. Les échanges avec le squad et l'envoi d'un signalement nécessitent du réseau.</p>
 </details>
 
 <details>
-<summary>Pourquoi un ami n'apparaît plus sur la carte ?</summary>
-<p>Il apparaît « Hors ligne » après 2 minutes sans nouvelle position : réseau absent, batterie vide ou partage en veille désactivé. Sa dernière position reste affichée.</p>
+<summary>Pourquoi un ami n'apparaît-il plus sur la carte ?</summary>
+<p>Un ami devient « Hors ligne » après environ deux minutes sans nouvelle position. Il peut manquer de réseau ou de batterie, avoir coupé le partage en veille ou activé la démo locale. Une position ancienne ne doit pas être considérée comme sa position actuelle.</p>
 </details>
 
 <details>
-<summary>Comment supprimer mes données ?</summary>
-<p>Squad → Profil &amp; réglages → Mes données → « Supprimer mon compte Ski360 ». Vos sessions se suppriment depuis l'onglet Journal. Détails dans la <a href="confidentialite.html">politique de confidentialité</a>.</p>
+<summary>Comment supprimer mon compte et mon journal ?</summary>
+<p>Squad → Profil &amp; réglages → Mes données → « Supprimer mon compte Ski360 » supprime le compte serveur, ses adhésions, ses statistiques de saison et ses données de notifications. Les sessions du journal restent sur ce téléphone et se suppriment séparément dans Journal.</p>
+<p>Les copies de signalements peuvent être conservées pour leur traitement ; les liens techniques vers un compte ou un squad supprimé sont retirés. Consultez la <a href="confidentialite.html">politique de confidentialité</a> pour le détail.</p>
 </details>
 
 <h2>Contact</h2>
-<p>Pour signaler un problème, un contenu ou un comportement abusif, ou faire une suggestion : <a href="https://github.com/ThomasMrs/ski360-site/issues/new">ouvrez une demande ici</a> (compte GitHub gratuit requis), en précisant votre modèle d'iPhone et la version d'iOS. Ne publiez jamais votre code de squad ni votre position dans une demande.</p>
-<p lang="en">Need help? <a href="https://github.com/ThomasMrs/ski360-site/issues/new">Open a support request</a> and tell us your iPhone model and iOS version.</p>
+<p>Pour un problème technique ou une suggestion, <a href="https://github.com/ThomasMrs/ski360-site/issues/new">ouvrez une demande d'assistance</a> avec votre modèle d'iPhone et votre version d'iOS ; un compte GitHub gratuit est nécessaire. <strong>Les demandes GitHub sont publiques : ne publiez ni position, ni code de squad, ni copie du contenu signalé.</strong> Utilisez « Signaler » dans l'app pour transmettre un contenu à la modération. Pour une demande relative à vos données, demandez d'abord un contact sans exposer d'information personnelle.</p>
+<p lang="en">Need help? <a href="https://github.com/ThomasMrs/ski360-site/issues/new">Open a support request</a> with your iPhone model and iOS version. GitHub issues are public: never post your location, squad code or reported content. Report received messages inside the app. Demo mode stays local, and Health export only includes real sessions.</p>
 
-<footer>Ski360 – application gratuite, sans publicité.</footer>
+<footer>Mis à jour le 13 novembre 2026. Ski360 – application gratuite, sans publicité.</footer>
 </main>
 </body>
 </html>

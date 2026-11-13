@@ -48,59 +48,77 @@ a { color: var(--accent); }
 <body>
 <header>
 <h1>Politique de confidentialité de Ski360</h1>
-<p>Dernière mise à jour : 8 novembre 2026</p>
+<p>Dernière mise à jour : 13 novembre 2026</p>
 </header>
 <main>
-<p>Ski360 est une application iPhone qui enregistre vos journées de ski et vous permet de partager votre position en direct avec un groupe d'amis (« squad »). Cette page explique quelles données sont utilisées, pourquoi, et comment les supprimer.</p>
+<p>Ski360 est une application iPhone qui enregistre vos journées de ski et vous permet de partager votre position avec un groupe privé d'amis (« squad »). Cette page décrit le journal local, les échanges entre membres, les notifications et le traitement des signalements.</p>
 
 <h2>En résumé</h2>
 <div class="card">
 <ul>
-<li>Pas de compte à créer : un identifiant anonyme est attribué à votre téléphone.</li>
-<li>Votre journal (traces GPS, sessions, matériel) reste sur votre téléphone.</li>
-<li>Votre position n'est partagée qu'avec les membres de vos squads, et n'est pas enregistrée sur nos serveurs.</li>
-<li>Aucune publicité, aucun traçage, aucune revente de données.</li>
-<li>Vous pouvez tout supprimer depuis l'application.</li>
+<li>Aucune inscription manuelle : les fonctions squad utilisent un compte anonyme créé automatiquement. Cet identifiant et votre profil permettent de rattacher vos échanges à votre compte ; « anonyme » ne signifie donc pas que les données sont sans lien entre elles.</li>
+<li>Votre journal, vos traces complètes et votre matériel sont conservés sur votre téléphone. Seuls les totaux réels nécessaires au classement sont transmis au serveur.</li>
+<li>La position en direct est partagée avec les membres du squad, sans historique de positions conservé par Ski360 sur le serveur. Les notifications de SOS, chute et ralliement peuvent transmettre la position concernée à Apple et aux destinataires.</li>
+<li>Le partage hors session et les alertes de batterie faible sont facultatifs et désactivés par défaut. Une alerte de batterie ne contient aucune coordonnée.</li>
+<li>Les contenus signalés font l'objet d'une copie conservée dans une table privée de modération ; ils constituent une exception à l'absence d'archivage serveur du chat courant.</li>
+<li>Aucune publicité, aucun traçage publicitaire, aucune revente de données.</li>
 </ul>
 </div>
 
 <h2>Données traitées</h2>
 <table>
-<tr><th>Donnée</th><th>Utilisation</th><th>Où elle est conservée</th></tr>
-<tr><td>Position précise, vitesse, altitude</td><td>Mesurer vos descentes ; afficher votre position à votre squad</td><td>Sur votre téléphone. Transmise en direct aux membres du squad, sans stockage sur le serveur.</td></tr>
-<tr><td>Identifiant anonyme</td><td>Vérifier que seuls les membres d'un squad accèdent à ses données</td><td>Serveur Supabase (Union européenne, Paris)</td></tr>
-<tr><td>Prénom et couleur choisis</td><td>Vous reconnaître sur la carte et dans le classement</td><td>Sur votre téléphone ; prénom et couleur conservés sur le serveur pour le classement de la saison du squad</td></tr>
-<tr><td>Totaux par journée (dénivelé, distance, vitesse max, pente max, nombre de descentes)</td><td>Classement de la saison entre membres du squad</td><td>Serveur Supabase, visibles uniquement par les membres du squad</td></tr>
-<tr><td>Nom du squad, code d'invitation</td><td>Rejoindre et gérer un squad</td><td>Serveur Supabase</td></tr>
-<tr><td>Messages et alertes du squad (SOS, chute, ralliement)</td><td>Communication entre membres</td><td>Transmis en direct, non conservés sur le serveur ; historique de 2 jours sur votre téléphone. Lorsque l'app d'un membre est fermée, une notification Apple lui transmet le texte de l'alerte et, pour un SOS, une chute ou un ralliement, la position concernée.</td></tr>
-<tr><td>Identifiant de notification de votre téléphone (jeton Apple), langue de l'app</td><td>Vous envoyer les alertes de votre squad quand Ski360 est fermé</td><td>Serveur Supabase, jusqu'à la désactivation du réglage « Alertes du squad app fermée » ou la suppression du compte. Le journal des envois est effacé après 24 heures.</td></tr>
-<tr><td>Massif de la station (numéro Météo-France)</td><td>Afficher le bulletin d'estimation du risque d'avalanche</td><td>Aucune donnée personnelle transmise ; les bulletins sont gardés en cache sur le serveur et sur votre téléphone</td></tr>
-<tr><td>Stats de session, liste du squad</td><td>Affichage sur votre Apple Watch</td><td>Échangées directement entre votre iPhone et votre montre, sans passer par nos serveurs</td></tr>
-<tr><td>Coordonnées de la station (arrondies)</td><td>Météo de la station via Open-Meteo</td><td>Non conservées par Ski360</td></tr>
+<thead><tr><th>Donnée</th><th>Utilisation</th><th>Conservation et destinataires</th></tr></thead>
+<tbody>
+<tr><td>Position précise, vitesse, altitude et trace de session</td><td>Mesurer les descentes, afficher la carte et partager la position avec le squad</td><td>Trace complète dans le journal local. Position et état transmis aux membres du squad en direct ; pas d'historique de positions stocké sur le serveur Ski360. Les appareils des membres peuvent conserver une dernière position reçue.</td></tr>
+<tr><td>Compte anonyme et identifiant de profil</td><td>Contrôler l'accès aux squads et rattacher le profil aux échanges et au filtrage des notifications</td><td>Identifiants conservés localement et sur le serveur Supabase en région Paris. Une table privée relie l'identifiant de profil au compte anonyme pour reconnaître les expéditeurs bloqués.</td></tr>
+<tr><td>Prénom et couleur choisis</td><td>Vous reconnaître sur la carte et dans les classements</td><td>Sur le téléphone et dans les échanges du squad ; profil conservé sur le serveur pour le classement de saison.</td></tr>
+<tr><td>Totaux réels par journée : dénivelé, distance, vitesse et pente maximales, nombre de runs</td><td>Classement de la saison entre membres du squad</td><td>Serveur Supabase, consultables par les membres du squad. Les sessions marquées « Démo » sont exclues de ces envois.</td></tr>
+<tr><td>Nom du squad, code d'invitation et adhésions</td><td>Créer, rejoindre et gérer un groupe privé</td><td>Serveur Supabase. Le code est un moyen d'accès à réserver aux personnes que vous souhaitez inviter.</td></tr>
+<tr><td>Messages et alertes du squad</td><td>Communication entre membres : chat, SOS, chute, ralliement et informations de session</td><td>Transmis en direct, sans archivage serveur du chat courant. Historique local limité lors de son entretien aux échanges récents, jusqu'à deux jours. Les contenus signalés sont conservés séparément pour la modération.</td></tr>
+<tr><td>Contenu et motif d'un signalement, identifiants du message, du membre signalé et du squad, compte auteur du signalement, date</td><td>Examiner les abus et assurer la sécurité des échanges</td><td>Table privée de modération sur Supabase, sans accès direct pour les autres utilisateurs. Le lien vers le compte auteur du signalement ou le squad est retiré si l'élément correspondant est supprimé ; la copie du contenu peut rester pour son traitement.</td></tr>
+<tr><td>Liste des membres bloqués : identifiant de profil, nom affiché et date du blocage</td><td>Masquer localement les messages et alertes non vitales de ces membres</td><td>Sur le téléphone. Les identifiants des profils bloqués sont aussi associés à l'inscription de notification de cet appareil sur le serveur pour filtrer les notifications app fermée. La synchronisation nécessite du réseau.</td></tr>
+<tr><td>Jeton de notification Apple, langue de l'app et paramètres de filtrage</td><td>Recevoir les alertes du squad app fermée</td><td>Serveur Supabase et service Apple de notifications. Les notifications contiennent leur texte et, pour un SOS, une chute ou un ralliement, la position concernée. Les alertes de batterie ne contiennent aucune coordonnée.</td></tr>
+<tr><td>Entraînement, durée active, pauses, distance, calories estimées et tracé d'une session réelle</td><td>Export facultatif vers Apple Santé</td><td>Envoyés à Santé seulement si vous activez l'export et autorisez les catégories concernées. Ski360 ne lit pas votre historique Santé et ne transmet pas de données lues dans Santé à son serveur. Aucun entraînement démo n'est exporté.</td></tr>
+<tr><td>Station et massif sélectionnés, coordonnées arrondies de la station</td><td>Afficher les cartes, la météo Open-Meteo et le bulletin avalanche Météo-France</td><td>Demandes adressées aux fournisseurs de cartes et de météo ; bulletins et plans peuvent être mis en cache localement ou sur le serveur. Ces demandes ne contiennent pas la trace complète de votre session.</td></tr>
+</tbody>
 </table>
 
-<h2>Localisation en arrière-plan</h2>
-<p>Pendant une session de ski, Ski360 continue d'enregistrer votre trace écran verrouillé. En dehors d'une session, si vous avez rejoint un squad, votre position reste visible par ses membres uniquement lorsque vous êtes en station de ski ; ce partage se désactive dans Squad → Profil &amp; réglages → Partage avec le squad.</p>
+<h2>Localisation et batterie en arrière-plan</h2>
+<p>Pendant une session réelle démarrée par vous, Ski360 peut continuer à enregistrer la trace et à partager votre position écran verrouillé. La localisation doit être autorisée dans iOS. L'autorisation « Toujours » permet la reprise du suivi après certaines interruptions par le système ; cette reprise n'est pas garantie après une fermeture forcée ou des restrictions iOS.</p>
+<p>En dehors d'une session, « Visible par mon squad écran verrouillé », dans Squad → Profil &amp; réglages → Partage avec le squad, est désactivé par défaut. Si vous l'activez, le partage est limité à une station et au jour où vous avez skié. Vous pouvez retirer ce choix dans les réglages de l'app ou l'autorisation de localisation dans iOS.</p>
+<p>« Prévenir le squad si ma batterie est faible » est un choix séparé, désactivé par défaut. Lorsqu'il est activé, une alerte peut être envoyée à 15 % ou moins pendant une session réelle ou un partage hors session autorisé. Elle indique le niveau de batterie sans position jointe.</p>
+
+<h2>Signalements, blocage et filtre de langage</h2>
+<p>Le menu d'un message reçu propose « Signaler » et « Bloquer ». Un signalement transmet une copie du contenu et le motif choisi à la modération, et ne bloque pas automatiquement son auteur. Un message confirme la réussite ou l'échec de l'envoi. Un filtre local limite certains termes grossiers ou injurieux en français et en anglais à l'envoi et à l'affichage.</p>
+<p>La liste se gère dans Squad → Profil &amp; réglages → Mes données → « Membres bloqués ». Le blocage masque immédiatement sur votre téléphone les messages et alertes non vitales de la personne. Les SOS et alertes de chute restent visibles pour la sécurité. Pour les notifications reçues lorsque l'app est fermée, les identifiants bloqués doivent d'abord être synchronisés au serveur : sans réseau ou avant cette synchronisation, une notification peut encore arriver.</p>
+
+<h2>Mode démo</h2>
+<p>« GPS simulé (démo) » ou « 4 amis simulés en temps réel », dans Squad → Profil &amp; réglages → Mode démo, active une expérience locale. Votre adhésion réelle est conservée et sa connexion est suspendue. Les positions, alertes et statistiques simulées ne sont pas envoyées au squad réel ni à son classement, et les sessions démo ne sont jamais écrites dans Santé. Elles sont identifiées dans le journal et exclues des records et compteurs réels de matériel.</p>
+<p>La démo peut toujours consulter les cartes, la météo ou les bulletins de la station sélectionnée. Ces demandes habituelles aux fournisseurs restent soumises aux traitements techniques ci-dessous. Les options de démo ne sont pas modifiables pendant une session ou tant qu'un brouillon interrompu attend votre décision.</p>
 
 <h2>Services tiers</h2>
 <ul>
-<li><strong>Supabase</strong> (hébergement de la base de données et du temps réel, région Paris) : sous-traitant technique.</li>
-<li><strong>Open-Meteo</strong> : prévisions météo à partir des coordonnées arrondies de la station.</li>
-<li><strong>Météo-France</strong> : bulletins d'estimation du risque d'avalanche, récupérés par notre serveur sans donnée personnelle.</li>
-<li><strong>OpenStreetMap / OpenSnowMap</strong> : plans des pistes, téléchargés sans données personnelles.</li>
-<li><strong>Apple</strong> : cartes, notifications et, si vous l'activez, l'app Santé (vos données Santé restent sous votre contrôle dans l'app Santé).</li>
+<li><strong>Supabase</strong> : hébergement des comptes anonymes, des données de squads, des notifications et de la modération en région Paris, ainsi que transport des échanges en temps réel.</li>
+<li><strong>Apple</strong> : cartes et notifications ; si vous l'activez, stockage des entraînements dans Santé selon vos autorisations et vos réglages Apple.</li>
+<li><strong>Open-Meteo</strong> : prévisions à partir des coordonnées arrondies de la station.</li>
+<li><strong>Météo-France</strong> : bulletins du massif sélectionné, récupérés par notre service sans trace GPS de session.</li>
+<li><strong>OpenStreetMap, OpenSnowMap et fournisseurs cartographiques</strong> : pistes, remontées et tuiles correspondant à la zone consultée.</li>
 </ul>
+<p>Comme pour toute requête réseau, les fournisseurs contactés peuvent recevoir les données techniques nécessaires à la connexion, dont l'adresse IP. Ski360 n'utilise pas ces échanges à des fins de publicité ou de suivi publicitaire.</p>
 
 <h2>Durée de conservation</h2>
-<p>Les données du serveur sont conservées tant que vous êtes membre d'un squad. Elles sont effacées lorsque vous quittez le squad ou supprimez votre compte. Les tentatives d'adhésion sont effacées après 24 heures.</p>
+<p>Le journal et le matériel restent sur le téléphone jusqu'à leur suppression par vous. L'historique local des échanges est limité aux données récentes lors de son chargement et de son entretien. La liste locale de blocage persiste jusqu'au déblocage ou à l'effacement des données de l'app.</p>
+<p>Les adhésions et les statistiques de saison sur le serveur sont retirées lorsque vous quittez le squad ou supprimez votre compte. L'inscription de notification est retirée lors de la désactivation de « Alertes du squad app fermée » ou de la suppression du compte, une fois la demande serveur effectuée. Les données devenues anciennes des limites d'envoi et d'adhésion sont purgées au cours des opérations serveur ; il ne s'agit pas d'une garantie d'effacement automatique à une heure précise.</p>
+<p>Les copies de signalements sont conservées séparément. Leur durée de conservation est gérée par l'éditeur selon les besoins de traitement des abus et les obligations applicables. Elles ne sont pas automatiquement supprimées avec le compte ou le squad : les liens techniques correspondants sont retirés, mais le texte et les autres éléments du signalement peuvent subsister. Aucune suppression automatique des signalements à échéance fixe n'est annoncée.</p>
 
-<h2>Vos droits</h2>
-<p>Dans l'application : Squad → Profil &amp; réglages → Mes données → « Supprimer mon compte Ski360 » efface immédiatement votre compte, vos adhésions, vos totaux de saison et l'identifiant de notification de votre téléphone. Vos sessions locales se suppriment depuis l'onglet Journal. Vous pouvez aussi nous écrire pour exercer vos droits d'accès, de rectification ou d'effacement (RGPD).</p>
+<h2>Vos choix et vos droits</h2>
+<p>Squad → Profil &amp; réglages → Mes données → « Supprimer mon compte Ski360 » supprime le compte serveur, ses adhésions, ses totaux de saison, les liens de profil associés et l'inscription de notification. Les sessions locales restent sur ce téléphone et se suppriment séparément dans Journal. Les copies de signalements suivent le traitement particulier indiqué ci-dessus.</p>
+<p>Vous pouvez désactiver les partages facultatifs et les notifications dans l'app, retirer les autorisations de localisation et de Santé dans iOS, et supprimer les entraînements exportés directement dans Santé. Vous pouvez demander l'accès, la rectification ou l'effacement de vos données en prenant contact avec l'éditeur.</p>
 
 <h2>Contact</h2>
-<p>Pour toute question ou demande liée à vos données : <a href="https://github.com/ThomasMrs/ski360-site/issues/new">ouvrez une demande</a> (voir aussi la page <a href="aide.html">Aide et contact</a>).</p>
+<p>Pour une question ou une demande relative à vos données, <a href="https://github.com/ThomasMrs/ski360-site/issues/new">ouvrez une demande de contact</a> ; un compte GitHub gratuit est nécessaire. <strong>Les demandes sont publiques : ne publiez ni position, ni code de squad, ni contenu signalé, ni autre donnée personnelle.</strong> Demandez d'abord un contact sans information sensible. Pour transmettre un contenu abusif à la modération, utilisez « Signaler » dans l'app. Voir aussi la page <a href="aide.html">Aide et contact</a>.</p>
 
-<footer>Ski360 – application gratuite, sans publicité.</footer>
+<footer>Ski360 – application gratuite, sans publicité. Politique mise à jour le 13 novembre 2026.</footer>
 </main>
 </body>
 </html>
