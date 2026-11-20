@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="apple-itunes-app" content="app-id=6835363630">
+<meta name="description" content="Invitation à rejoindre un squad Ski360 : ouvre-la dans l'app ou installe Ski360 gratuitement.">
+<meta property="og:title" content="Rejoins mon squad Ski360">
+<meta property="og:description" content="Ouvre l'invitation dans Ski360 ou installe l'app gratuite pour skier avec ton squad.">
+<meta property="og:type" content="website">
+<title>Ski360 – Rejoindre un squad</title>
+<style>
+:root {
+    --primary: #3d445e;
+    --accent: #d1a964;
+    --text: #1E1E1E;
+    --muted: #6b7185;
+    --header-muted: #adb2c3;
+    --background: #ffffff;
+    --surface: #f4f5f8;
+    --border: #dfe1e8;
+    --warning: #e5312b;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #f2f3f6;
+        --muted: #adb2c3;
+        --background: #1E1E1E;
+        --surface: #2a2d38;
+        --border: #3d445e;
+    }
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+}
+header { background: var(--primary); color: #ffffff; padding: 32px 16px; }
+header h1 { margin: 0 auto; max-width: 560px; font-size: 1.8rem; }
+header p { margin: 8px auto 0; max-width: 560px; color: var(--header-muted); }
+main { max-width: 560px; margin: 0 auto; padding: 24px 16px 48px; }
+.card { background: var(--surface); border-radius: 20px; padding: 22px 18px; text-align: center; }
+.label { margin: 0; color: var(--muted); font-weight: 600; }
+.squad-name { margin: 6px 0 14px; font-size: 1.9rem; font-weight: 800; line-height: 1.25; overflow-wrap: anywhere; }
+.code {
+    display: block;
+    margin: 0 auto 10px;
+    padding: 12px 8px;
+    border: 2px dashed var(--accent);
+    border-radius: 16px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    -webkit-user-select: all;
+    user-select: all;
+}
+.status { min-height: 1.6em; margin: 0 0 6px; color: var(--muted); font-weight: 600; }
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 54px;
+    margin: 10px 0 0;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 16px;
+    font: inherit;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+}
+.primary { background: var(--accent); color: #1E1E1E; }
+.secondary { background: var(--background); color: var(--text); border: 1px solid var(--border); }
+.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.hint { margin: 12px 0 0; color: var(--muted); font-size: 0.92rem; }
+.error { border-left: 4px solid var(--warning); padding: 12px 16px; background: var(--surface); border-radius: 10px; }
+.error .button { margin-top: 14px; }
+h2 { font-size: 1.25rem; margin: 32px 0 8px; }
+ol { padding-left: 1.3em; }
+li { margin: 6px 0; }
+a { color: var(--accent); }
+[hidden] { display: none !important; }
+footer { color: var(--muted); font-size: 0.9rem; margin-top: 40px; }
+</style>
+</head>
+<body>
+<header>
+<h1>Rejoindre un squad Ski360</h1>
+<p>Un ami t'invite à skier avec lui sur Ski360.</p>
+</header>
+<main>
+<noscript><p class="error">Active JavaScript pour afficher l'invitation. Tu peux aussi saisir le code reçu dans Ski360 : onglet Squad → « Rejoindre avec un code ».</p></noscript>
+
+<section id="invite" class="card" hidden aria-labelledby="squad-name">
+<p class="label">Tu es invité dans le squad</p>
+<p id="squad-name" class="squad-name"></p>
+<p class="label">Code d'invitation</p>
+<span id="squad-code" class="code"></span>
+<p id="copy-status" class="status" role="status" aria-live="polite"></p>
+<a id="open-app" class="button primary" href="#">Ouvrir dans Ski360</a>
+<button id="copy-code" class="button ghost" type="button">Copier le code</button>
+<a class="button secondary" href="https://apps.apple.com/app/id6835363630">Installer depuis l'App Store</a>
+<p class="hint">Si Safari indique que l'adresse n'est pas valide, ou si rien ne se passe en touchant « Ouvrir dans Ski360 », installe d'abord l'app.</p>
+</section>
+
+<section id="invalid" class="error" hidden>
+<p><strong>Ce lien d'invitation est incomplet ou invalide.</strong></p>
+<p>Demande à ton ami de te renvoyer l'invitation, ou saisis le code reçu dans Ski360 : onglet Squad → « Rejoindre avec un code ».</p>
+<a class="button secondary" href="https://apps.apple.com/app/id6835363630">Installer depuis l'App Store</a>
+</section>
+
+<h2>Tu n'as pas encore Ski360 ?</h2>
+<ol>
+<li>Installe Ski360 gratuitement depuis l'App Store.</li>
+<li>Ouvre l'app et termine l'accueil.</li>
+<li>Va dans l'onglet Squad, touche « Rejoindre avec un code » et saisis le code d'invitation. Tu peux aussi coller le message d'invitation reçu : Ski360 y trouve le code.</li>
+<li>Ou reviens simplement sur cette page et touche « Ouvrir dans Ski360 ».</li>
+</ol>
+
+<p lang="en">You have been invited to a Ski360 squad. If Ski360 is installed, tap “Ouvrir dans Ski360” (Open in Ski360). Otherwise, get Ski360 for free on the App Store, open it, go to the Squad tab, tap “Join with a code” and enter the code shown above, or come back to this page and tap “Ouvrir dans Ski360”.</p>
+
+<footer>Ski360 – application gratuite, sans publicité. Cette page n'utilise ni cookie ni traceur. <a href="aide.html">Aide</a> · <a href="confidentialite.html">Confidentialité</a></footer>
+</main>
+<script>
+(function () {
+    "use strict";
+    var alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    var codeLength = 6;
+    var nameLimit = 32;
+
+    function normalizeCode(raw) {
+        if (typeof raw !== "string") { return null; }
+        var cleaned = raw.toUpperCase().replace(/[^A-Z0-9]/g, "");
+        var body = cleaned.indexOf("SKI") === 0 ? cleaned.slice(3) : cleaned;
+        if (body.length !== codeLength) { return null; }
+        for (var index = 0; index < body.length; index += 1) {
+            if (alphabet.indexOf(body.charAt(index)) === -1) { return null; }
+        }
+        return "SKI-" + body;
+    }
+
+    function graphemes(text) {
+        if (typeof Intl !== "undefined" && typeof Intl.Segmenter === "function") {
+            var segmenter = new Intl.Segmenter("fr", { granularity: "grapheme" });
+            return Array.from(segmenter.segment(text), function (part) { return part.segment; });
+        }
+        return Array.from(text);
+    }
+
+    function cleanName(raw) {
+        if (typeof raw !== "string") { return ""; }
+        var text = raw.replace(/[\u0000-\u001F\u007F-\u009F]/g, " ").trim();
+        return graphemes(text).slice(0, nameLimit).join("").trim();
+    }
+
+    function deepLink(code, name) {
+        var link = "ski360://join?code=" + encodeURIComponent(code);
+        if (name) { link += "&name=" + encodeURIComponent(name); }
+        return link;
+    }
+
+    function parameter(params, key) {
+        var found = null;
+        params.forEach(function (value, name) {
+            if (found === null && name.toLowerCase() === key) { found = value; }
+        });
+        return found;
+    }
+
+    function copyWithSelection(element) {
+        var selection = window.getSelection();
+        var range = document.createRange();
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        try {
+            return document.execCommand("copy");
+        } catch (error) {
+            return false;
+        }
+    }
+
+    var params = new URLSearchParams(window.location.search);
+    var code = normalizeCode(parameter(params, "code"));
+    var name = cleanName(parameter(params, "name"));
+
+    if (!code) {
+        document.getElementById("invalid").hidden = false;
+        return;
+    }
+
+    var codeElement = document.getElementById("squad-code");
+    var statusElement = document.getElementById("copy-status");
+    document.getElementById("squad-name").textContent = name || "Squad " + code;
+    codeElement.textContent = code;
+    document.getElementById("open-app").setAttribute("href", deepLink(code, name));
+    document.title = "Ski360 – Rejoindre « " + (name || code) + " »";
+    document.getElementById("invite").hidden = false;
+
+    document.getElementById("copy-code").addEventListener("click", function () {
+        function copied() { statusElement.textContent = "Code copié !"; }
+        function fallback() {
+            statusElement.textContent = copyWithSelection(codeElement) ? "Code copié !" : "Code sélectionné : utilise « Copier ».";
+        }
+        if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+            navigator.clipboard.writeText(code).then(copied, fallback);
+        } else {
+            fallback();
+        }
+    });
+}());
+</script>
+</body>
+</html>
